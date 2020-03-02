@@ -1,0 +1,152 @@
+[
+  {
+   "remote": "github",
+   "repository": "TwrpBuilder/android_device_generic_twrpbuilder.git",
+   "target_path": "device/generic/twrpbuilder",
+   "revision": "android-9.0"
+  },
+  {
+   "remote": "github",
+   "repository": "omnirom/android_external_busybox",
+   "target_path": "external/busybox",
+   "revision": "android-9.0"
+  },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_device_rockchip_rk3328",
+        "target_path": "device/rockchip/rk3328",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_device_rockchip_rksdk",
+        "target_path": "device/rockchip/common",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_platform_vendor_rockchip_common",
+        "target_path": "vendor/rockchip/common",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_platform_vendor_rockchip_hardware",
+        "target_path": "vendor/rockchip/hardware",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_audio",
+        "target_path": "hardware/rockchip/audio",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_bootctrl",
+        "target_path": "hardware/rockchip/bootctrl",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_camera_engine_rkisp",
+        "target_path": "hardware/rockchip/camera_engine_rkisp",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_camera_v3",
+        "target_path": "hardware/rockchip/camera",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_drmservice",
+        "target_path": "hardware/rockchip/drmservice",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_hdmicec",
+        "target_path": "hardware/rockchip/hdmicec",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_hwcomposer_rga",
+        "target_path": "hardware/rockchip/hwcomposer",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_jpeghw",
+        "target_path": "hardware/rockchip/jpeghw",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_libgralloc_ump",
+        "target_path": "hardware/rockchip/libgralloc",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_libiep",
+        "target_path": "hardware/rockchip/libiep",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_liblights",
+        "target_path": "hardware/rockchip/liblights",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_libmemtrack",
+        "target_path": "hardware/rockchip/libmemtrack",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_librga",
+        "target_path": "hardware/rockchip/librga",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_librkvpu",
+        "target_path": "hardware/rockchip/librkvpu",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_omx_il",
+        "target_path": "hardware/rockchip/omx_il",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_power",
+        "target_path": "hardware/rockchip/power",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_hardware_rk29_sensor",
+        "target_path": "hardware/rockchip/sensor",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/platform_hardware_realtek",
+        "target_path": "hardware/realtek",
+        "revision": "rock64"
+    },
+    {
+        "remote": "github",
+        "repository": "a9rock64/rk_kernel",
+        "target_path": "kernel/philips/ppx620",
+        "revision": "rock64"
+    }
+]
