@@ -37,5 +37,5 @@ TW_THEME := landscape_hdpi
 
 
 include $(LOCAL_PATH)/kernel.mk
-include device/generic/twrpbuilder/BoardConfig64.mk
+include $(LOCAL_PATH)/BoardConfig64.mk
 
