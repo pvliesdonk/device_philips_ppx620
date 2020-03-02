@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <project name="pvliesdonk/device_philips_ppx620" path="device/philips/ppx620" remote="github" revision="master" />
+  <project name="TwrpBuilder/android_device_generic_twrpbuilder.git" path="device/generic/twrpbuilder" remote="github" revision="android-9.0" />
 </manifest>
