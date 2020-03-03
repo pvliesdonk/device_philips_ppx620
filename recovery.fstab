@@ -22,3 +22,4 @@
 /dev/block/by-name/trust                 /trust               emmc             defaults                  defaults
 /dev/block/by-name/baseparameter         /baseparameter       emmc             defaults                  defaults
 /dev/block/by-name/vbmeta                /vbmeta              emmc             defaults                  defaults
+/devices/*/xhci-hcd.0.auto/usb*          auto                 auto             defaults                  voldmanaged=usb:auto
