@@ -1,0 +1,12 @@
+on early-init
+
+on init
+  	write /sys/devices/platform/ff450000.syscon/ff450000.syscon:usb2-phy@100/otg_mode host
+on early-boot
+
+on boot
+
+	
+on init
+
+

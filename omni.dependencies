@@ -1,8 +1,2 @@
 [
-    {
-        "remote": "github",
-        "repository": "a9rock64/rk_kernel",
-        "target_path": "kernel/philips/ppx620",
-        "revision": "rock64"
-    }
 ]

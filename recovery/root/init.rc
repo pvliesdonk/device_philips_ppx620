@@ -1,0 +1,105 @@
+import /init.recovery.${ro.hardware}.rc
+import /init.${ro.hardware}.usb.rc
+import /init.usb.configfs.rc
+
+on early-init
+    # Set the security context of /postinstall if present.
+    restorecon /postinstall
+
+    start ueventd
+
+on init
+    export ANDROID_ROOT /system
+    export ANDROID_DATA /data
+    export EXTERNAL_STORAGE /sdcard
+    export PATH /sbin
+    export LD_LIBRARY_PATH .:/sbin
+
+    symlink /system/bin /bin
+    symlink /system/etc /etc
+
+    mount cgroup none /acct cpuacct
+    mkdir /acct/uid
+
+    mkdir /sdcard
+    mkdir /system
+    mkdir /data
+    mkdir /cache
+    mkdir /sideload
+    mkdir /metadata
+    mount tmpfs tmpfs /tmp
+
+    chown root shell /tmp
+    chmod 0775 /tmp
+
+    write /proc/sys/kernel/panic_on_oops 1
+    write /proc/sys/vm/max_map_count 1000000
+
+on boot && property:persist.sys.usb.config=*
+    setprop sys.usb.config ${persist.sys.usb.config}
+    setprop ro.serialno rockchipplatform
+    setprop sys.usb.ffs.ready 1
+    setprop sys.usb.ffs.mtp.ready 1
+    setprop sys.usb.configfs 1
+
+on boot
+    ifup lo
+    hostname localhost
+    domainname localdomain
+
+    class_start default
+
+# Load properties from /system/ + /factory after fs mount.
+on load_system_props_action
+    load_system_props
+
+on firmware_mounts_complete
+   rm /dev/.booting
+
+# Mount filesystems and start core system services.
+on late-init
+    trigger early-fs
+    trigger fs
+    trigger post-fs
+    trigger post-fs-data
+
+    # Load properties from /system/ + /factory after fs mount. Place
+    # this in another action so that the load will be scheduled after the prior
+    # issued fs triggers have completed.
+    trigger load_system_props_action
+
+    # Remove a file to wake up anything waiting for firmware
+    trigger firmware_mounts_complete
+
+    trigger early-boot
+    trigger boot
+
+service ueventd /sbin/ueventd
+    critical
+    seclabel u:r:ueventd:s0
+
+service charger /charger -r
+    critical
+    seclabel u:r:charger:s0
+
+service recovery /sbin/recovery
+    seclabel u:r:recovery:s0
+
+service adbd /sbin/adbd --root_seclabel=u:r:su:s0 --device_banner=recovery
+    disabled
+    socket adbd stream 660 system system
+    seclabel u:r:adbd:s0
+
+# Always start adbd on userdebug and eng builds
+on property:ro.debuggable=1
+    start adbd
+    start console
+
+# Restart adbd so it can run as root
+on property:service.adb.root=1
+    restart adbd
+
+service console /sbin/sh
+    console
+    disabled
+    seclabel u:r:shell:s0
