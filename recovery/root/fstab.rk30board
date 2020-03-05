@@ -2,11 +2,28 @@
 #<src>                                          <mnt_point>         <type>    <mnt_flags and options>                       <fs_mgr_flags>
 # The filesystem that contains the filesystem checker binary (typically /system) cannot
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
-
-/dev/block/by-name/oem            /oem                ext4      ro,noatime,nodiratime,noauto_da_alloc                                  wait,check
-/dev/block/by-name/metadata       /mnt/vendor/metadata           ext4      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard                wait
-/dev/block/by-name/misc         /misc               emmc      defaults     defaults
-/dev/block/by-name/cache          /cache              ext4      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard                wait,check
+/dev/block/platform/ff520000.dwmmc/by-name/user                  /mnt/internal_sd     vfat             defaults                  defaults
+/dev/block/mmcblk3p1                                               /mnt/external_sd     vfat             /dev/block/mmcblk0                  defaults
+/dev/block/by-name/system                /                    ext4             defaults                  defaults
+/dev/block/by-name/vendor                /vendor              ext4             defaults                  defaults
+/dev/block/by-name/userdata              /data                f2fs             defaults                  defaults
+/dev/block/by-name/cust                  /cust                ext4             defaults                  defaults
+/dev/block/by-name/custom                /custom              ext4             defaults                  defaults
+/dev/block/by-name/radical_update        /radical_update      ext4             defaults                  defaults
+/dev/block/by-name/uboot                 /uboot               emmc             defaults                  defaults
+/dev/block/by-name/charge                /charge              emmc             defaults                  defaults
+/dev/block/by-name/resource              /resource            emmc             defaults                  defaults
+/dev/block/by-name/parameter             /parameter           emmc             defaults                  defaults
+/dev/block/by-name/boot                  /boot                emmc             defaults                  defaults
+/dev/block/by-name/recovery              /recovery            emmc             defaults                  defaults
+/dev/block/by-name/backup                /backup              emmc             defaults                  defaults
+/dev/block/by-name/trust                 /trust               emmc             defaults                  defaults
+/dev/block/by-name/baseparameter         /baseparameter       emmc             defaults                  defaults
+/dev/block/by-name/vbmeta                /vbmeta              emmc             defaults                  defaults
+/dev/block/by-name/oem                   /oem                 ext4             defaults                  defaults
+/dev/block/by-name/metadata              /mnt/vendor/metadata   ext4           defaults			 defaults
+/dev/block/by-name/misc                  /misc                emmc             defaults                  defaults
+/dev/block/by-name/cache                 /cache               ext4             defaults                  defaults
 
 /devices/platform/*usb*   auto vfat defaults      voldmanaged=usb:auto
 
@@ -15,5 +32,3 @@
 /devices/platform/ff5f0000.dwmmc/mmc_host*        auto  auto    defaults        voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/platform/ff500000.dwmmc/mmc_host*        auto  auto    defaults        voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/platform/ff510000.dwmmc/mmc_host*        auto  auto    defaults        voldmanaged=sdcard1:auto,encryptable=userdata
-# Full disk encryption has less effect on rk3328, so default to enable this.
-/dev/block/by-name/userdata       /data               f2fs      noatime,nodiratime,nosuid,nodev,discard,inline_xattr,reserve_root=32768,resuid=0,resgid=1065                   wait,check,notrim,forceencrypt=/cache/key_file,quota,reservedsize=128M
