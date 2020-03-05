@@ -1,0 +1,1 @@
+dontaudit hal_wifi_supplicant_default self:capability { dac_override dac_read_search };

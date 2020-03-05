@@ -1,0 +1,82 @@
+#for rk modules
+sys_graphic.            u:object_r:graphic_prop:s0
+wlan.driver.status                    u:object_r:vendor_wifi_prop:s0
+sys.keymaster.       u:object_r:keymaster_prop:s0
+# public_vendor_default_prop
+# They are public_vendor_default_props for vendor-specific extension.
+# Usually they are for vndk-sp libs and vendor apks.
+ro.factory.hasUMS             u:object_r:public_vendor_default_prop:s0
+
+# public_vendor_system_prop
+# They are public_vendor_system_props for vendor-specific extension.
+iep.                            u:object_r:public_vendor_system_prop:s0
+mediaplayer.timedtext.listener                            u:object_r:public_vendor_system_prop:s0
+media.audio.slice                            u:object_r:public_vendor_system_prop:s0
+
+
+# vendor_default_prop
+# default_prop isn't accessible from vendor components.
+# So vendor_default_prop should be marked.
+ro.audio.monitorOrientation          u:object_r:vendor_default_prop:s0
+
+wifi.supplicant_scan_interval        u:object_r:vendor_default_prop:s0
+#sys.hwc.device.primary               u:object_r:vendor_default_prop:s0
+sys.video.refFrameMode               u:object_r:vendor_default_prop:s0
+testing.mediascanner.skiplist        u:object_r:vendor_default_prop:s0
+persist.bluetooth.btsnoopenable      u:object_r:vendor_default_prop:s0
+persist.bluetooth.btsnooppath        u:object_r:vendor_default_prop:s0
+persist.bluetooth.btsnoopsize        u:object_r:vendor_default_prop:s0
+persist.bluetooth.rtkcoex            u:object_r:vendor_default_prop:s0
+bluetooth.enable_timeout_ms          u:object_r:vendor_default_prop:s0
+ro.rfkilldisabled                    u:object_r:vendor_default_prop:s0
+
+
+debug.hwui.renderer u:object_r:public_vendor_system_prop:s0
+#rk modules end
+
+#for vendor/build.prop
+sys.all.modules.ready                   u:object_r:public_vendor_system_prop:s0
+#vendor-init-settable|public-readable 
+persist.sys.usb.config        u:object_r:debug_prop:s0 exact string
+ro.target.product  u:object_r:debug_prop:s0 exact string
+persist.sys.first_booting        u:object_r:debug_prop:s0
+drm.service.                   u:object_r:debug_prop:s0
+ro.setupwizard.mode                   u:object_r:debug_prop:s0
+ro.com.google.gmsversion                   u:object_r:debug_prop:s0
+sys.status.hidebar_enable              u:object_r:debug_prop:s0
+ro.rk.screenshot_enable              u:object_r:debug_prop:s0
+ro.config.enable.remotecontrol              u:object_r:debug_prop:s0
+ro.factory.              u:object_r:debug_prop:s0
+ro.rk.              u:object_r:debug_prop:s0
+ro.boot.noril              u:object_r:debug_prop:s0
+ro.sf.lcdc_composer              u:object_r:debug_prop:s0
+ril.function.dataonly              u:object_r:debug_prop:s0
+ro.mem_optimise.enable               u:object_r:debug_prop:s0
+ro.rksdk.version                     u:object_r:debug_prop:s0
+ro.lmk.critical_upgrade              u:object_r:debug_prop:s0
+ro.lmk.upgrade_pressure              u:object_r:debug_prop:s0
+ro.lmk.kill_heaviest_task            u:object_r:debug_prop:s0
+ro.lmk.downgrade_pressure            u:object_r:debug_prop:s0
+ro.statsd.enable                     u:object_r:debug_prop:s0
+pm.dexopt.downgrade_after_inactive_days       u:object_r:debug_prop:s0
+pm.dexopt.shared                     u:object_r:debug_prop:s0
+config.disable_rtt                   u:object_r:debug_prop:s0
+config.disable_consumerir            u:object_r:debug_prop:s0
+persist.sys.strictmode.visual        u:object_r:debug_prop:s0
+sf.power.control        u:object_r:debug_prop:s0
+ro.tether.denied        u:object_r:debug_prop:s0
+ro.safemode.disabled        u:object_r:debug_prop:s0
+sys.resolution.changed        u:object_r:debug_prop:s0
+ro.kernel.android.checkjni        u:object_r:debug_prop:s0
+sys.vwb.        u:object_r:debug_prop:s0
+UserVolumeLabel        u:object_r:debug_prop:s0
+ro.tee.storage        u:object_r:debug_prop:s0
+#vendor-init-settable|public-readable
+ro.product.usbfactory  u:object_r:exported_default_prop:s0 exact string
+ro.boot.copy_oem  u:object_r:exported_default_prop:s0 exact string
+# vendor-init-settable|vendor-init-actionable
+#persist.sys.zram_enabled u:object_r:exported2_system_prop:s0 exact bool
+
+#For TvSettings
+persist.vendor.abc_switch      u:object_r:debug_prop:s0
+persist.vendor.internet.adb.enable        u:object_r:debug_prop:s0

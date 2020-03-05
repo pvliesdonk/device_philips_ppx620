@@ -1,0 +1,3 @@
+get_prop(traceur_app,vendor_default_prop)
+
+allow traceur_app gpu_device:dir search;

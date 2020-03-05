@@ -1,0 +1,1 @@
+rockchip.hardware.outputmanager::IRkOutputManager      u:object_r:rk_output_hal_service:s0

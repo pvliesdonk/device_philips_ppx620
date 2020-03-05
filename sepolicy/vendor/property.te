@@ -1,0 +1,12 @@
+type public_vendor_default_prop, property_type;
+type public_vendor_system_prop, property_type, mlstrustedobject;
+type tee_supplicant_prop, property_type;
+type keymaster_prop, property_type;
+type graphic_prop, property_type;
+type vendor_wifi_prop, property_type;
+type vendor_drm_prop, property_type;
+type vendor_cec_prop, property_type;
+type vendor_omx_prop, property_type;
+type vendor_hal_wifi_prop, property_type;
+type cts_gts_prop, property_type;
+type vendor_camera_prop, property_type;

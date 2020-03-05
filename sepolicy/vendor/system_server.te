@@ -1,0 +1,27 @@
+#allow system_server sysfs:file { read open getattr };
+# for gpu
+allow system_server abc:dir { read open };
+allow system_server gpu_device:dir { search rw_dir_perms };
+allow system_server serial_device:chr_file rw_file_perms;
+allow system_server sysfs_hctosys:file { read open getattr };
+allow system_server sysfs_ethernet:file { read open getattr };
+
+# for storage
+allow system_server storage_stub_file:dir getattr;
+allow system_server sysfs_ksm:file { open read getattr };
+
+# input files
+r_dir_file(system_server, idc_file)
+r_dir_file(system_server, keylayout_file)
+r_dir_file(system_server, metadata_file)
+
+#rk_output_hal
+allow system_server rk_output_hal_service:hwservice_manager find;
+add_service(system_server,drm_device_management_service)
+binder_call(system_server, rk_output_hal)
+
+typeattribute system_server system_writes_vendor_properties_violators;
+get_prop(system_server,vendor_default_prop)
+get_prop(system_server,cts_gts_prop)
+set_prop(system_server,cts_gts_prop)
+set_prop(system_server,public_vendor_system_prop)

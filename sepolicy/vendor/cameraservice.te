@@ -1,0 +1,8 @@
+allow cameraserver device:dir r_dir_perms;
+allow cameraserver video_device:dir r_dir_perms;
+allow cameraserver video_device:chr_file rw_file_perms;
+allow cameraserver gpu_device:chr_file { read open write ioctl getattr };
+allow cameraserver gpu_device:dir { search };
+allow cameraserver mediacodec:binder { call };
+
+get_prop(cameraserver,vendor_default_prop)

@@ -1,0 +1,21 @@
+dontaudit surfaceflinger kernel:system module_request;
+allow surfaceflinger vendor_file:file read;
+dontaudit surfaceflinger mnt_vendor_file:dir search;
+#for hdmi
+allow surfaceflinger sysfs_hdmi:file rw_file_perms;
+allow surfaceflinger surfaceflinger:unix_stream_socket { ioctl };
+allow surfaceflinger system_data_file:dir create_dir_perms;
+allow surfaceflinger gpu_data_file:file {read open getattr};
+allow surfaceflinger gpu_device:chr_file { ioctl };
+allow surfaceflinger gpu_device:dir { search rw_dir_perms };
+allow surfaceflinger self:capability { sys_nice };
+allow surfaceflinger vendor_metadata:dir { search };
+dontaudit surfaceflinger sysfs:file rw_file_perms;
+
+# for video formate 10bit to 8bit by rga
+allow surfaceflinger rga_device:dir search;
+allow surfaceflinger rga_device:chr_file rw_file_perms;
+
+typeattribute surfaceflinger system_writes_vendor_properties_violators;
+get_prop(surfaceflinger,public_vendor_system_prop)
+set_prop(surfaceflinger,public_vendor_system_prop)

@@ -1,0 +1,10 @@
+#for gpu
+allow platform_app gpu_device:dir { search rw_dir_perms };
+allow platform_app gpu_data_file:file rw_file_perms;
+allow platform_app vendor_metadata:dir { search };
+allow platform_app vendor_file:file { getattr open read };
+
+allow platform_app fuseblk:dir create_dir_perms;
+allow platform_app fuseblk:file create_file_perms;
+
+get_prop(platform_app,vendor_default_prop)

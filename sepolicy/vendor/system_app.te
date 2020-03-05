@@ -1,0 +1,28 @@
+dontaudit system_app mnt_vendor_file:dir search;
+#for gpu
+allow system_app gpu_device:dir { search rw_dir_perms };
+allow system_app sysfs_lcdc:file rw_file_perms;
+allow system_app sysfs_usb:file rw_file_perms;
+allow system_app gpu_data_file:file rw_file_perms;
+allow system_app vendor_metadata:dir { search };
+#for ota
+allow system_app selinuxfs:file { read open };
+allow system_app mnt_media_rw_file:dir { getattr };
+#for hdmi
+allow system_app sysfs_hdmi:file rw_file_perms;
+allow system_app sysfs_fb:file rw_file_perms;
+
+allow system_app vendor_file:file { read open getattr };
+allow system_app unlabeled:file { getattr open read write unlink rename };
+allow system_app unlabeled:dir { open search read getattr write remove_name add_name };
+allow system_app cache_file:lnk_file { read };
+allow system_app cache_recovery_file:dir {search create read write open add_name getattr remove_name};
+allow system_app cache_recovery_file:file {rw_file_perms create unlink setattr};
+
+allow system_app proc_stat:file r_file_perms;
+allow system_app sysfs_temp:file r_file_perms;
+
+allow system_app cache_file:dir search;
+get_prop(system_app,vendor_default_prop)
+set_prop(system_app,powerctl_prop)
+set_prop(system_app,debug_prop)

@@ -1,0 +1,20 @@
+allow hal_camera_default vndbinder_device:chr_file { read write open ioctl} ;
+#allow hal_camera_default default_prop:file { read open getattr } ;
+allow hal_camera_default property_socket:sock_file { write } ;
+allow hal_camera_default init:unix_stream_socket { connectto } ;
+allow hal_camera_default gpu_device:chr_file { read open write ioctl getattr };
+allow hal_camera_default rga_device:chr_file { read open write ioctl };
+allow hal_camera_default hal_graphics_mapper_hwservice:hwservice_manager { find };
+allow hal_camera_default gpu_device:dir { search };
+allow hal_camera_default hal_graphics_allocator_hwservice:hwservice_manager { find };
+allow hal_camera_default hal_graphics_allocator_default:binder { call };
+allow hal_camera_default hal_graphics_composer_default:fd { use };
+allow hal_camera_default sysfs:file { read open getattr };
+allow hal_camera_default sysfs_vpu:file { read open getattr };
+allow hal_camera_default sysfs_dev:file { read open getattr };
+
+get_prop(hal_camera_default,vendor_default_prop)
+get_prop(hal_camera_default,vendor_omx_prop)
+get_prop(hal_camera_default,public_vendor_default_prop)
+get_prop(hal_camera_default,vendor_camera_prop)
+set_prop(hal_camera_default,vendor_camera_prop)

@@ -1,0 +1,5 @@
+allow mediaextractor unlabeled:file { read };
+allow mediaextractor oemfs:file {read};
+allow mediaextractor vfat:file { read getattr };
+get_prop(mediaextractor,vendor_default_prop)
+get_prop(mediaextractor,cts_gts_prop)

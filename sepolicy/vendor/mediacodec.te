@@ -1,0 +1,17 @@
+allow mediacodec rga_device:chr_file { ioctl rw_file_perms };
+allow mediacodec gpu_device:dir search;
+allow mediacodec system_file:dir { open read };
+allow mediacodec sysfs:file { read open getattr };
+allow mediacodec sysfs_vpu:file { read open getattr };
+allow mediacodec sysfs:dir { read open getattr };
+allow mediacodec property_socket:sock_file { write };
+allow mediacodec init:unix_stream_socket { connectto };
+allow mediacodec sysfs_dev:file { open read getattr write };
+allow mediacodec video_file:file { read getattr open };
+allow mediacodec tee_device:chr_file rw_file_perms;
+
+get_prop(mediacodec,vendor_default_prop);
+get_prop(mediacodec,public_vendor_default_prop);
+get_prop(mediacodec,cts_gts_prop);
+get_prop(mediacodec,vendor_omx_prop);
+set_prop(mediacodec,vendor_omx_prop);

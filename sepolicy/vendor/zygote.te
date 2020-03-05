@@ -1,0 +1,4 @@
+allow zygote cgroup:file { rw_file_perms };
+allow zygote self:capability { sys_resource };
+
+get_prop(zygote, vendor_default_prop)
