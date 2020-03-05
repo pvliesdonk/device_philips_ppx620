@@ -89,7 +89,7 @@ TW_SCREEN_BLANK_ON_BOOT := false
 DEVICE_RESOLUTION := 1280x720
 
 # Override properties
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
     ro.hwui.drop_shadow_cache_size=4.0 \
     ro.hwui.gradient_cache_size=0.8 \
