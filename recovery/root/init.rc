@@ -1,5 +1,5 @@
-import /init.recovery.${ro.hardware}.rc
-import /init.${ro.hardware}.usb.rc
+import /init.recovery.ppx620.rc
+import /init.ppx620.usb.rc
 import /init.usb.configfs.rc
 
 on early-init
