@@ -59,6 +59,9 @@
 #/dev/ttyS2                0660   bluetooth  net_bt_stack
 /dev/rtk_btusb            0660   bluetooth  net_bt_stack
 
+#for hid audio
+/dev/hidraw0              0660   audio  audio
+
 # for radio
 /dev/ttyUSB0              0660   radio		radio
 /dev/ttyUSB1              0660   radio		radio
@@ -96,6 +99,7 @@
 
 #for hdmi cec
 /dev/cec	0666	system	system
+/dev/cec0	0660	system	system
 #sofia 
 /dev/dcc    0666    system  system
 /dev/pmem_gfx   0666    system  system
@@ -114,200 +118,96 @@
 #for invensence mpu
 /dev/iio:device* 0660 system system
 
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* key             0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* buffer/enable           0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* buffer/length           0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* power_state         0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* scan_elements/in_timestamp_en   0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* name                0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* trigger/current_trigger     0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* dmp_firmware            0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* firmware_loaded         0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* dmp_on              0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* dmp_int_on          0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* dmp_event_int_on        0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* dmp_output_rate         0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* tap_on              0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* self_test           0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* temperature         0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* gyro_enable         0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* sampling_frequency      0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* gyro_matrix         0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* scan_elements/in_anglvel_x_en   0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* scan_elements/in_anglvel_y_en   0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* scan_elements/in_anglvel_z_en   0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* in_anglvel_scale        0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* accl_enable         0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* sampling_frequency      0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* accl_matrix         0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* in_accel_scale          0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* accl_bias           0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* in_accel_x_offset       0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* in_accel_y_offset       0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* in_accel_z_offset       0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* scan_elements/in_accel_x_en 0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* scan_elements/in_accel_y_en 0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* scan_elements/in_accel_z_en 0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* quaternion_on           0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* scan_elements/in_quaternion_r_en    0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* scan_elements/in_quaternion_x_en    0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* scan_elements/in_quaternion_y_en    0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* scan_elements/in_quaternion_z_en    0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* display_orientation_on      0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* event_display_orientation   0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* event_smd           0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* smd_enable          0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* smd_delay_threshold     0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* smd_delay_threshold2        0660 system system
-/sys/devices/platform/ff140000.i2c/i2c-1/1-0068/iio:device* smd_threshold           0660 system system
-
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* key             0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* buffer/enable           0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* buffer/length           0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* power_state         0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* scan_elements/in_timestamp_en   0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* name                0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* trigger/current_trigger     0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* dmp_firmware            0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* firmware_loaded         0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* dmp_on              0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* dmp_int_on          0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* dmp_event_int_on        0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* dmp_output_rate         0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* tap_on              0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* self_test           0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* temperature         0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* gyro_enable         0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* sampling_frequency      0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* gyro_matrix         0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* scan_elements/in_anglvel_x_en   0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* scan_elements/in_anglvel_y_en   0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* scan_elements/in_anglvel_z_en   0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* in_anglvel_scale        0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* accl_enable         0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* sampling_frequency      0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* accl_matrix         0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* in_accel_scale          0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* accl_bias           0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* in_accel_x_offset       0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* in_accel_y_offset       0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* in_accel_z_offset       0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* scan_elements/in_accel_x_en 0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* scan_elements/in_accel_y_en 0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* scan_elements/in_accel_z_en 0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* quaternion_on           0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* scan_elements/in_quaternion_r_en    0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* scan_elements/in_quaternion_x_en    0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* scan_elements/in_quaternion_y_en    0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* scan_elements/in_quaternion_z_en    0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* display_orientation_on      0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* event_display_orientation   0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* event_smd           0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* smd_enable          0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* smd_delay_threshold     0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* smd_delay_threshold2        0660 system system
-/sys/devices/platform/ff160000.i2c/i2c-4/4-0068/iio:device* smd_threshold           0660 system system
-
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* key             0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* buffer/enable           0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* buffer/length           0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* power_state         0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* scan_elements/in_timestamp_en   0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* name                0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* trigger/current_trigger     0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* dmp_firmware            0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* firmware_loaded         0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* dmp_on              0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* dmp_int_on          0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* dmp_event_int_on        0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* dmp_output_rate         0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* tap_on              0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* self_test           0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* temperature         0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* gyro_enable         0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* sampling_frequency      0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* gyro_matrix         0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* scan_elements/in_anglvel_x_en   0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* scan_elements/in_anglvel_y_en   0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* scan_elements/in_anglvel_z_en   0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* in_anglvel_scale        0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* accl_enable         0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* sampling_frequency      0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* accl_matrix         0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* in_accel_scale          0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* accl_bias           0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* in_accel_x_offset       0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* in_accel_y_offset       0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* in_accel_z_offset       0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* scan_elements/in_accel_x_en 0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* scan_elements/in_accel_y_en 0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* scan_elements/in_accel_z_en 0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* quaternion_on           0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* scan_elements/in_quaternion_r_en    0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* scan_elements/in_quaternion_x_en    0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* scan_elements/in_quaternion_y_en    0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* scan_elements/in_quaternion_z_en    0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* display_orientation_on      0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* event_display_orientation   0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* event_smd           0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* smd_enable          0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* smd_delay_threshold     0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* smd_delay_threshold2        0660 system system
-/sys/devices/platform/ff1d0000.spi/spi_master/spi32766/spi32766.0/iio:device* smd_threshold           0660 system system
-
-# for nanoc mpu sensor
-/dev/iio:device*    0660 system system
-/sys/devices/platform/mpu6500_hid/trigger* name    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* accl_bias    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* accl_enable    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* accl_matrix    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* buffer/length    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* buffer/enable    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* compass_enable    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* compass_matrix    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* dmp_event_int_on    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* dmp_firmware    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* dmp_int_on    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* dmp_on    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* dmp_output_rate    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* event_display_orientation    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* firmware_loaded    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* gyro_enable    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* gyro_matrix    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* in_accel_scale    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* in_anglvel_scale    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* in_magn_scale    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* key    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* power_state    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* quaternion_on    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* sampling_frequency    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* scan_elements/in_accel_x_en    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* scan_elements/in_accel_y_en    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* scan_elements/in_accel_z_en    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* scan_elements/in_anglvel_x_en    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* scan_elements/in_anglvel_y_en    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* scan_elements/in_anglvel_z_en    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* scan_elements/in_magn_x_en    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* scan_elements/in_magn_y_en    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* scan_elements/in_magn_z_en    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* scan_elements/in_quaternion_r_en    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* scan_elements/in_quaternion_x_en    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* scan_elements/in_quaternion_y_en    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* scan_elements/in_quaternion_z_en    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* scan_elements/in_timestamp_en    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* self_test    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* tap_on    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* temperature    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* sync    0660 system system
-/sys/devices/platform/mpu6500_hid/iio:device* trigger/current_trigger    0660 system system
+/sys/bus/iio/devices/iio:device* key             0660 system system
+/sys/bus/iio/devices/iio:device* buffer/enable           0660 system system
+/sys/bus/iio/devices/iio:device* buffer/length           0660 system system
+/sys/bus/iio/devices/iio:device* power_state         0660 system system
+/sys/bus/iio/devices/iio:device* scan_elements/in_timestamp_en   0660 system system
+/sys/bus/iio/devices/iio:device* name                0660 system system
+/sys/bus/iio/devices/iio:device* trigger/current_trigger     0660 system system
+/sys/bus/iio/devices/iio:device* dmp_firmware            0660 system system
+/sys/bus/iio/devices/iio:device* firmware_loaded         0660 system system
+/sys/bus/iio/devices/iio:device* dmp_on              0660 system system
+/sys/bus/iio/devices/iio:device* dmp_int_on          0660 system system
+/sys/bus/iio/devices/iio:device* dmp_event_int_on        0660 system system
+/sys/bus/iio/devices/iio:device* dmp_output_rate         0660 system system
+/sys/bus/iio/devices/iio:device* tap_on              0660 system system
+/sys/bus/iio/devices/iio:device* self_test           0660 system system
+/sys/bus/iio/devices/iio:device* temperature         0660 system system
+/sys/bus/iio/devices/iio:device* gyro_enable         0660 system system
+/sys/bus/iio/devices/iio:device* sampling_frequency      0660 system system
+/sys/bus/iio/devices/iio:device* gyro_matrix         0660 system system
+/sys/bus/iio/devices/iio:device* scan_elements/in_anglvel_x_en   0660 system system
+/sys/bus/iio/devices/iio:device* scan_elements/in_anglvel_y_en   0660 system system
+/sys/bus/iio/devices/iio:device* scan_elements/in_anglvel_z_en   0660 system system
+/sys/bus/iio/devices/iio:device* in_anglvel_scale        0660 system system
+/sys/bus/iio/devices/iio:device* accl_enable         0660 system system
+/sys/bus/iio/devices/iio:device* sampling_frequency      0660 system system
+/sys/bus/iio/devices/iio:device* accl_matrix         0660 system system
+/sys/bus/iio/devices/iio:device* in_accel_scale          0660 system system
+/sys/bus/iio/devices/iio:device* accl_bias           0660 system system
+/sys/bus/iio/devices/iio:device* in_accel_x_offset       0660 system system
+/sys/bus/iio/devices/iio:device* in_accel_y_offset       0660 system system
+/sys/bus/iio/devices/iio:device* in_accel_z_offset       0660 system system
+/sys/bus/iio/devices/iio:device* scan_elements/in_accel_x_en 0660 system system
+/sys/bus/iio/devices/iio:device* scan_elements/in_accel_y_en 0660 system system
+/sys/bus/iio/devices/iio:device* scan_elements/in_accel_z_en 0660 system system
+/sys/bus/iio/devices/iio:device* quaternion_on           0660 system system
+/sys/bus/iio/devices/iio:device* scan_elements/in_quaternion_r_en    0660 system system
+/sys/bus/iio/devices/iio:device* scan_elements/in_quaternion_x_en    0660 system system
+/sys/bus/iio/devices/iio:device* scan_elements/in_quaternion_y_en    0660 system system
+/sys/bus/iio/devices/iio:device* scan_elements/in_quaternion_z_en    0660 system system
+/sys/bus/iio/devices/iio:device* display_orientation_on      0660 system system
+/sys/bus/iio/devices/iio:device* event_display_orientation   0660 system system
+/sys/bus/iio/devices/iio:device* event_smd           0660 system system
+/sys/bus/iio/devices/iio:device* smd_enable          0660 system system
+/sys/bus/iio/devices/iio:device* smd_delay_threshold     0660 system system
+/sys/bus/iio/devices/iio:device* smd_delay_threshold2        0660 system system
+/sys/bus/iio/devices/iio:device* smd_threshold           0660 system system
 
 #for frp function
-/dev/block/platform/fe330000.sdhci/by-name/frp 0660 system system
-/dev/block/platform/ff0f0000.dwmmc/by-name/frp 0660 system system
-/dev/block/rknand_frp 0660 system system
+/dev/block/by-name/frp 0660 system system
+
+#for baseparameter function
+/dev/block/by-name/baseparameter 0660 system system
 
 /dev/cpu_state 0666 system system
 /dev/chip_state 0666 system system
 /dev/i2c-1 0660 system system
 #for ovr
 /dev/ovr0		  0664   system          system
+
+#for rk_isp1
+/dev/v4l-subdev0          0660   media      camera
+/dev/v4l-subdev1          0660   media      camera
+/dev/v4l-subdev2          0660   media      camera
+/dev/v4l-subdev3          0660   media      camera
+/dev/v4l-subdev4          0660   media      camera
+/dev/v4l-subdev5          0660   media      camera
+/dev/v4l-subdev6          0660   media      camera
+/dev/v4l-subdev7          0660   media      camera
+
+/dev/video0          0660   media      camera
+/dev/video1          0660   media      camera
+/dev/video2          0660   media      camera
+/dev/video3          0660   media      camera
+/dev/video4          0660   media      camera
+/dev/video5          0660   media      camera
+/dev/video6          0660   media      camera
+/dev/video7          0660   media      camera
+
+/dev/media0          0660   media      camera
+/dev/media1          0660   media      camera
+
+#for external camera
+/dev/video8          0660   media      camera
+/dev/video9          0660   media      camera
+/dev/video10         0660   media      camera
+/dev/video11         0660   media      camera
+
+# for sensors
+/dev/input/event*    0666   input system
+
+#for pico
+/dev/block/mmcblk2p21      0666   system          system
+/dev/pico              0777   system      system
