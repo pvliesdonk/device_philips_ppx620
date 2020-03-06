@@ -25,10 +25,13 @@
 /dev/block/by-name/misc                  /misc                emmc             defaults                  defaults
 /dev/block/by-name/cache                 /cache               ext4             defaults                  defaults
 
-/devices/platform/*usb*   auto vfat defaults      voldmanaged=usb:auto
+/devices/ff500000.rksdmmc/mmc_host*         auto  auto    defaults        voldmanaged=sdcard1:auto
 
-/dev/block/zram0                                none                swap      defaults                                              zramsize=50%
-# For sdmmc
-/devices/platform/ff5f0000.dwmmc/mmc_host*        auto  auto    defaults        voldmanaged=sdcard1:auto,encryptable=userdata
-/devices/platform/ff500000.dwmmc/mmc_host*        auto  auto    defaults        voldmanaged=sdcard1:auto,encryptable=userdata
-/devices/platform/ff510000.dwmmc/mmc_host*        auto  auto    defaults        voldmanaged=sdcard1:auto,encryptable=userdata
+# non box product,configuration to the first item, will filter out left
+# ff580000:usb20_otg, ff5c0000:ehci, ff5d0000:ohci, ff600000:dwc3
+/devices/ff580000.usb*     auto vfat defaults      voldmanaged=usb:auto
+/devices/ff5c0000.usb*     auto vfat defaults      voldmanaged=usb:auto
+/devices/ff5d0000.usb*     auto vfat defaults      voldmanaged=usb:auto
+/devices/usb*              auto vfat defaults      voldmanaged=usb:auto
+
+/dev/block/zram0                                none                swap      defaults                                              zramsize=533413200
