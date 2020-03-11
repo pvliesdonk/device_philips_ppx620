@@ -21,7 +21,7 @@
 /dev/block/by-name/baseparameter         /baseparameter       emmc             defaults                  defaults
 /dev/block/by-name/vbmeta                /vbmeta              emmc             defaults                  defaults
 /dev/block/by-name/oem                   /oem                 ext4             defaults                  defaults
-/dev/block/by-name/metadata              /mnt/vendor/metadata   ext4           defaults			 defaults
+/dev/block/by-name/metadata              /metadata            ext4             defaults			 defaults
 /dev/block/by-name/misc                  /misc                emmc             defaults                  defaults
 /dev/block/by-name/cache                 /cache               ext4             defaults                  defaults
 
