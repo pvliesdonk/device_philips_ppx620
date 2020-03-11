@@ -5,9 +5,9 @@ Disclaimers:
 - It will also void your warrantee.
 - I will not responsible for any kind of damage or loss occurred to your device, during or after the installation process. Proceed at your own risk.
 - This is my own personal work and has no endorsement from either Philips or Screeneo.
-- If these instructions are not sufficient for you, you should not be doing this.
+- *If these instructions are not sufficient for you, you should not be doing this.*
 
-
+Contents
 - [Putting the device in ADB or FastBoot mode](#putting-the-device-in-adb-or-fastboot-mode)
 	- [ADB Mode](#adb-mode)
 	- [Fastboot Mode](#fastboot-mode)
