@@ -86,6 +86,7 @@ First, make sure you are connected via ADB.
 5. A new USB device will pop up on your PC with VID=0x18D1 and PID=0xD00D. Manually install the USB drivers for "Android Bootloader Interface".
 6. Verify you are connected with `fastboot devices`
 
+*Note:* If you get a USB device with VID=0x2207, PID=0x320C, your device is not in Fastboot but in RockUSB mode. Just hold the power button to power off.
 
 ## Flashing the custom recovery
 
@@ -97,9 +98,10 @@ First, make sure you are connected via ADB.
 
 4. Boot into the recovery
 
-   *Note:*The PPX620 restores its original recovery on regular system boot.
+   *Note:* The PPX620 restores its original recovery on regular system boot.
    - disconnect USB-A and USB-C Power cable
    - long press power until device powers down
    - while pressing recovery button, turn on using power button.
      The recovery button can be accessed by the pinhole closest to the USB-C power connector.
-      
+    
+Holding the recovery button while pressing power results in Recovery mode when the USB-A is *not* connected, and in RockUSB mode when the USB-A cable *is* connected.
