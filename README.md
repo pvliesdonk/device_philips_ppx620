@@ -1,65 +1,97 @@
-## Submitting Patches ##
-------------------
-Our project is open source, and patches are always welcome!
-You can send patches by using:
+# TWRP Custom recovery for Philips PicoPix Max PPX620
 
-Pull request, right here on git.
+## Compiling
 
-Contact @lj50036 on irc, Network: freenode, Channel: #twrp
+Following packages are needed in Ubuntu:
 
-## Maintaining Authorship ##
-----------------------
-Maintaining authorship is a very important aspect of working with Open Source code. If you wish to submit a patch/fix
-from anywhere else (another ROM, project, etc.), it is imperative that you maintain the ownership of the person whose
-work you are seeking to include. Doing so will ensure that credit is given where it is deserved, and the [principles of open source](http://opensource.org/docs/osd)
-are upheld. Your contribution to the project will still be recognized as you will forever be listed as the committer.
+    sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip
 
-If you manually cherry pick a patch/fix then you will need to add the original author prior to pushing to our [gerrit](https://gerrit.omnirom.org).
-This is a very easy task to perform, and is usually done after you commit a patch/fix locally. This is accomplished
-after you type in `git commit -a` , type in the commit message and save. You would then do the following:
+Create a working directory
 
-```bash
-git commit --amend --author "Author <email@address.com>"
-```
+    export BUILD=/home/peter/twrp-omni
+    mkdir -p $BUILD
 
-So it should look like this once you get all of the author's information:
-
-```bash
-git commit --amend --author "Spencer McGillicuddy <spencer.the.bestest@gmail.com>"
-```
-
-Alternatively, adding as part of the original `git commit` message is preferred and done like the following:
-
-```bash
-git commit --author="Author <email@address.com>" -m "[commit message]"
-```
-
-This saves time, and when part of your normal routine, prevents the infamous "ermahgerd I forgot to add authorship -
-let me fix it because I was found out!" message.
-
-
-## Getting Started ##
----------------
-
-To get started with OMNI sources to build TWRP, you'll need to get
-familiar with [Git and Repo](https://source.android.com/source/using-repo.html).
-
-To initialize your local repository using the OMNIROM trees to build TWRP, use a command like this:
-
-    repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
-
-To initialize a shallow clone, which will save even more space, use a command like this:
-
+Start with initializing a shallow clonee of the minimal TWRP manifest as follows:
+    
+    cd $BUILD
     repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
+
+Then add this github to the local manifest. Create a new file `$BUILD/.repo/local_manifests/ppx620.xml` with the following contents:
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <manifest>
+        <project name="pvliesdonk/device_philips_ppx620" path="device/philips/ppx620" remote="github" revision="master" />
+    </manifest>
+
+e.g.
+
+    mkdir -p $BUILD/.repo/local_manifests
+    cat <<EOT >> $BUILD/.repo/local_manifests
+    <?xml version="1.0" encoding="UTF-8"?>
+    <manifest>
+        <project name="pvliesdonk/device_philips_ppx620" path="device/philips/ppx620" remote="github" revision="master" />
+    </manifest>
+    EOT
 
 Then to sync up:
 
     repo sync
 
-Then to build for a device with recovery partition:
+Then to build:
 
-     cd <source-dir>; export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch omni_<device>-eng; mka recoveryimage
+    cd $BUILD 
+    export ALLOW_MISSING_DEPENDENCIES=true 
+    . build/envsetup.sh 
+    lunch omni_ppx620-eng 
+    make recoveryimage
 
-Then to build for a device without recovery partition:
+## Putting the device in ADB or FastBoot mode
+Requirements
+- USB-A to USB-A cable
+- Android platform tool (ADB/Fastboot). Grab [here](https://developer.android.com/studio/releases/platform-tools)
+- ADB USB Driver. RockChip specific drivers (with precoded VID/PID) are in [here](https://github.com/rockchip-linux/tools/raw/master/windows/DriverAssitant_v4.91.zip), but the reference Google drivers [here](https://developer.android.com/studio/run/win-usb) should also work.
+- Some proficiency for installing and using the above. Find one of the many tutorials online.
 
-     cd <source-dir>; export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch omni_<device>-eng; mka bootimage
+### ADB Mode
+via PPM launcher
+1. Click ok 5 times in About > Software Version.
+2. Then from the hidden android menu, go to Device Preferences > About and click 10 times on the build number. This is only needed once.
+3. Finally go to Developer Options and enable both usb debugging and Internet Adb.
+4. Plug in your USB-A to USB-A cable to your PC.
+5. Enable USB Settings. This needs to be done after every reboot.
+6. A new USB device will pop up on your PC with VID=0x2207 and PID=0x0006. Manually install the USB drivers for "Android ADB Interface".
+7. Run `adb devices` at least once; the PPX620 will ask to authenticate the PC, which you should.
+
+via Network
+1. Click ok 5 times in About > Software Version.
+2. Then from the hidden android menu, go to Device Preferences > About and click 10 times on the build number. This is only needed once.
+3. Finally go to Developer Options and enable both usb debugging and Internet Adb.
+4. Connect to the PPX620 via `adb connect <ip-address>:5555`
+
+### Fastboot Mode
+First, make sure you are connected via ADB. 
+
+1. Run `adb reboot fastboot`
+2. Disconnect USB-A cable if it was connected. PPX620 will not reboot when connected
+3. PPX620 will reboot, screen will stay black
+4. Connect USB-A to USB-A
+5. A new USB device will pop up on your PC with VID=0x18D1 and PID=0xD00D. Manually install the USB drivers for "Android Bootloader Interface".
+6. Verify you are connected with `fastboot devices`
+
+
+## Flashing the custom recovery
+
+1. Build the image as above, or grab a prebuilt image from the [releases page](https://github.com/pvliesdonk/device_philips_ppx620/releases).
+2. Put the device in fastboot mode
+3. Flash the image 
+
+    fastboot flash recovery recovery.img
+
+4. Boot into the recovery
+
+   *Note:*The PPX620 restores its original recovery on regular system boot.
+   - disconnect USB-A and USB-C Power cable
+   - long press power until device powers down
+   - while pressing recovery button, turn on using power button.
+     The recovery button can be accessed by the pinhole closest to the USB-C power connector.
+      
