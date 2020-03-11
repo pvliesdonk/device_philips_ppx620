@@ -52,6 +52,8 @@ Then to build:
     . build/envsetup.sh 
     lunch omni_ppx620-eng 
     make recoveryimage
+    
+The built recovery image can be found in `$BUILD/out/target/product/ppx620/recovery.img`.
 
 ## Putting the device in ADB or FastBoot mode
 Requirements
