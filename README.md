@@ -1,5 +1,13 @@
 # TWRP Custom recovery for Philips PicoPix Max PPX620
 
+- [Compiling](#compiling)
+- [Putting the device in ADB or FastBoot mode](#putting-the-device-in-adb-or-fastboot-mode)
+	- [ADB Mode](#adb-mode)
+	- [Fastboot Mode](#fastboot-mode)
+- [Flashing the custom recovery](#flashing-the-custom-recovery)
+
+
+
 ## Compiling
 
 Following packages are needed in Ubuntu:
