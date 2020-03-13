@@ -87,7 +87,8 @@ TW_NO_SCREEN_TIMEOUT := true
 TW_NO_SCREEN_BLANK := true
 TW_SCREEN_BLANK_ON_BOOT := false
 DEVICE_RESOLUTION := 1280x720
-
+TW_EXCLUDE_SUPERSU := true
+TWRP_INCLUDE_LOGCAT := true
 
 include $(LOCAL_PATH)/kernel.mk
 include $(LOCAL_PATH)/BoardConfig64.mk

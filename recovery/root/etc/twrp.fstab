@@ -1,12 +1,17 @@
 # mount point   fstype  device                                                   [flags]
 
-/uboot          emmc    /dev/block/by-name/uboot            flags=backup=1;display=Uboot;flashimg
-/trust          emmc    /dev/block/by-name/trust            flags=backup=1;display=Trust;flashimg
-/misc           emmc    /dev/block/by-name/misc             flags=backup=1;display=Misc
-/baseparameter  emmc    /dev/block/by-name/baseparameter    flags=display=Parameter
-/resource       emmc    /dev/block/by-name/resource         flags=backup=1;display=Resource;flashimg
 
-/kernel         emmc    /dev/block/by-name/kernel           flags=backup=1;display=Kernel;flashimg
+/external_sd   auto        /dev/block/mmcblk1p1                                     flags=wipeingui;storage;removable;display="External SD"
+/usb-otg       auto        /dev/block/sda1                                          flags=wipeingui;storage;removable;display="USB OTG"
+
+
+/uboot          emmc    /dev/block/by-name/uboot            flags=display=Uboot;flashimg
+/trust          emmc    /dev/block/by-name/trust            flags=display=Trust;flashimg
+/misc           emmc    /dev/block/by-name/misc             flags=display=Misc
+/baseparameter  emmc    /dev/block/by-name/baseparameter    flags=display=Parameter
+/resource       emmc    /dev/block/by-name/resource         flags=display=Resource;flashimg
+
+/kernel         emmc    /dev/block/by-name/kernel           flags=display=Kernel;flashimg
 /dtb            emmc    /dev/block/by-name/dtb              flags=display=DTB
 /dtbo           emmc    /dev/block/by-name/dtbo             flags=display=DTBO
 /logo           emmc    /dev/block/by-name/logo             flags=display=Logo
@@ -16,10 +21,10 @@
 /recovery       emmc    /dev/block/by-name/recovery         flags=backup=1;display=Recovery
 
 /backup         emmc    /dev/block/by-name/backup           flags=display=Backup
-/cache          ext4    /dev/block/by-name/cache            flags=backup=1;display=Cache
+/cache          ext4    /dev/block/by-name/cache            flags=display=Cache
 
 /system         ext4    /dev/block/by-name/system           flags=backup=1;display=System
-/metadata       ext4    /dev/block/by-name/metadata         flags=backup=1;display=Metadata
+/metadata       ext4    /dev/block/by-name/metadata         flags=display=Metadata
 /vendor         ext4    /dev/block/by-name/vendor           flags=backup=1;display=Vendor
 /oem            ext4    /dev/block/by-name/oem              flags=backup=1;display=OEM
 
@@ -30,7 +35,3 @@
 /picosetting    emmc    /dev/block/by-name/picosetting      flags=display=PicoSetting
 
 /data           ext4    /dev/block/by-name/userdata         flags=backup=1;display=Data
-
-
-/external_sd   auto        /dev/block/mmcblk1p1                                     flags=wipeingui;storage;removable;display="External SD"
-/usb-otg       auto        /dev/block/sda1                                          flags=wipeingui;storage;removable;display="USB OTG"

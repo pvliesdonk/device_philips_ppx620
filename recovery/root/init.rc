@@ -9,7 +9,7 @@ on early-init
 
     # Set the security context for the init process.
     # This should occur before anything else (e.g. ueventd) is started.
-    setcon u:r:init:s0
+    #setcon u:r:init:s0
 
     start ueventd
 
@@ -61,10 +61,6 @@ on boot
 
     class_start default
 
-# Load properties from /system/ + /factory after fs mount.
-on load_all_props_action
-    load_all_props
-
 on firmware_mounts_complete
    rm /dev/.booting
 
@@ -75,20 +71,12 @@ on late-init
     trigger post-fs
     trigger post-fs-data
 
-    # Load properties from /system/ + /factory after fs mount. Place
-    # this in another action so that the load will be scheduled after the prior
-    # issued fs triggers have completed.
-    trigger load_all_props_action
-
     # Remove a file to wake up anything waiting for firmware
     trigger firmware_mounts_complete
 
     trigger early-boot
     trigger boot
-
-on property:sys.powerctl=*
-   powerctl ${sys.powerctl}
-
+	
 
 service ueventd /sbin/ueventd
     critical
