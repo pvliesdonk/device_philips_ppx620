@@ -23,7 +23,7 @@
 /backup         emmc    /dev/block/by-name/backup           flags=display=Backup
 /cache          ext4    /dev/block/by-name/cache            flags=display=Cache
 
-/system         ext4    /dev/block/by-name/system           flags=backup=1;display=System
+/system_root    ext4    /dev/block/by-name/system           flags=backup=1;display=System
 /metadata       ext4    /dev/block/by-name/metadata         flags=display=Metadata
 /vendor         ext4    /dev/block/by-name/vendor           flags=backup=1;display=Vendor
 /oem            ext4    /dev/block/by-name/oem              flags=backup=1;display=OEM

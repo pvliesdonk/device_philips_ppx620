@@ -89,6 +89,7 @@ TW_SCREEN_BLANK_ON_BOOT := false
 DEVICE_RESOLUTION := 1280x720
 TW_EXCLUDE_SUPERSU := true
 TWRP_INCLUDE_LOGCAT := true
+TW_HAS_MTP := false
 
 include $(LOCAL_PATH)/kernel.mk
 include $(LOCAL_PATH)/BoardConfig64.mk

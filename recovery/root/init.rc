@@ -39,7 +39,6 @@ on init
     chown root shell /tmp
     chmod 0775 /tmp
 
-    write /sys/devices/platform/ff450000.syscon/ff450000.syscon:usb2-phy@100/otg_mode host
     write /proc/sys/kernel/panic_on_oops 1
     write /proc/sys/vm/max_map_count 1000000
 
@@ -98,7 +97,6 @@ service adbd /sbin/adbd --root_seclabel=u:r:su:s0 --device_banner=recovery
 service console /sbin/sh
     console
 	disabled
-    seclabel u:r:shell:s0
 
 # Always start adbd on userdebug and eng builds
 on property:ro.debuggable=1
