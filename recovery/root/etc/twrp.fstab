@@ -5,8 +5,8 @@
 /usb-otg       auto        /dev/block/sda1                                          flags=wipeingui;storage;removable;display="USB OTG"
 
 
-/uboot          emmc    /dev/block/by-name/uboot            flags=display=Uboot;flashimg
-/trust          emmc    /dev/block/by-name/trust            flags=display=Trust;flashimg
+/uboot          emmc    /dev/block/by-name/uboot            flags=backup=1;display=Uboot;flashimg
+/trust          emmc    /dev/block/by-name/trust            flags=backup=1;display=Trust;flashimg
 /misc           emmc    /dev/block/by-name/misc             flags=display=Misc
 /baseparameter  emmc    /dev/block/by-name/baseparameter    flags=display=Parameter
 /resource       emmc    /dev/block/by-name/resource         flags=display=Resource;flashimg
@@ -23,10 +23,16 @@
 /backup         emmc    /dev/block/by-name/backup           flags=display=Backup
 /cache          ext4    /dev/block/by-name/cache            flags=display=Cache
 
-/system_root    ext4    /dev/block/by-name/system           flags=backup=1;display=System
+/system_root    ext4    /dev/block/by-name/system           flags=backup=0;display=System
+/system_image   emmc    /dev/block/by-name/system           flags=backup=1;flashimg;display=System Image
+
 /metadata       ext4    /dev/block/by-name/metadata         flags=display=Metadata
-/vendor         ext4    /dev/block/by-name/vendor           flags=backup=1;display=Vendor
-/oem            ext4    /dev/block/by-name/oem              flags=backup=1;display=OEM
+
+/vendor         ext4    /dev/block/by-name/vendor           flags=backup=0;display=Vendor
+/vendor         emmc    /dev/block/by-name/vendor           flags=backup=1;flashimg;display=Vendor Image
+
+/oem            ext4    /dev/block/by-name/oem              flags=backup=0;display=OEM
+/oem_image      emmc    /dev/block/by-name/oem              flags=backup=1;flashimg;display=OEM Image 
 
 /frp            emmc    /dev/block/by-name/frp              flags=display=FRP
 
