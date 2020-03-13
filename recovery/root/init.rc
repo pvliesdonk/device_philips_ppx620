@@ -41,6 +41,7 @@ on init
 
     write /proc/sys/kernel/panic_on_oops 1
     write /proc/sys/vm/max_map_count 1000000
+    write /sys/devices/platform/ff450000.syscon/ff450000.syscon:usb2-phy@100/otg_mode host
 
 on fs
     mount pstore pstore /sys/fs/pstore
