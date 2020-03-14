@@ -18,20 +18,20 @@
 /vbmeta         emmc    /dev/block/by-name/vbmeta           flags=display="VBMeta";flashimg
 
 /boot           emmc    /dev/block/by-name/boot             flags=backup=1;display="Boot";flashimg
-/recovery       emmc    /dev/block/by-name/recovery         flags=backup=1;display="Recovery";flashimg
+/recovery       emmc    /dev/block/by-name/recovery         flags=backup=0;display="Recovery";flashimg
 
 /backup         emmc    /dev/block/by-name/backup           flags=display="Backup";flashimg
 /cache          ext4    /dev/block/by-name/cache            flags=display="Cache";flashimg
 
-/system_root    ext4    /dev/block/by-name/system           flags=backup=1;display="System"
+/system_root    ext4    /dev/block/by-name/system           flags=backup=0;display="System"
 /system_image   emmc    /dev/block/by-name/system           flags=backup=1;flashimg;display="System Image"
 
 /metadata       ext4    /dev/block/by-name/metadata         flags=display="Metadata"
 
-/vendor         ext4    /dev/block/by-name/vendor           flags=backup=1;display="Vendor"
+/vendor         ext4    /dev/block/by-name/vendor           flags=backup=0;display="Vendor"
 /vendor         emmc    /dev/block/by-name/vendor           flags=backup=1;flashimg;display="Vendor Image"
 
-/oem            ext4    /dev/block/by-name/oem              flags=backup=1;display="OEM"
+/oem            ext4    /dev/block/by-name/oem              flags=backup=0;display="OEM"
 /oem_image      emmc    /dev/block/by-name/oem              flags=backup=1;flashimg;display="OEM Image "
 
 /frp            emmc    /dev/block/by-name/frp              flags=display="FRP"
