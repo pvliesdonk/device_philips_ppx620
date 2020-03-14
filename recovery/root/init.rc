@@ -20,7 +20,8 @@ service set_permissive /sbin/permissive.sh
 on init
     export PATH /sbin
     export LD_LIBRARY_PATH .:/sbin
-    export ANDROID_ROOT /system
+    export ANDROID_ROOT /system_root
+
     export ANDROID_DATA /data
     export EXTERNAL_STORAGE /external_sd
 
