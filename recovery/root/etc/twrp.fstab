@@ -20,8 +20,8 @@
 /boot           emmc    /dev/block/by-name/boot             flags=backup=1;display="Boot";flashimg
 /recovery       emmc    /dev/block/by-name/recovery         flags=backup=0;display="Recovery";flashimg
 
-/backup         emmc    /dev/block/by-name/backup           flags=display="Backup";flashimg
-/cache          ext4    /dev/block/by-name/cache            flags=display="Cache";flashimg
+/backup         emmc    /dev/block/by-name/backup           flags=display="Backup"
+/cache          ext4    /dev/block/by-name/cache            flags=display="Cache"
 
 /system_root    ext4    /dev/block/by-name/system           flags=backup=0;display="System"
 /system_image   emmc    /dev/block/by-name/system           flags=backup=1;flashimg;display="System Image"
@@ -40,4 +40,4 @@
 
 /picosetting    emmc    /dev/block/by-name/picosetting      flags=display="PicoSetting"
 
-/data           ext4    /dev/block/by-name/userdata         flags=backup=1;display="Data"
+/data           f2fs    /dev/block/by-name/userdata         flags=backup=1;display="Data"
