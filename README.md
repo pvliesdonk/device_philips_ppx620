@@ -95,7 +95,7 @@ Then add this github to the local manifest. Create a new file `$BUILD/.repo/loca
 e.g.
 
     mkdir -p $BUILD/.repo/local_manifests
-    cat <<EOT >> $BUILD/.repo/local_manifests
+    cat <<EOT >> $BUILD/.repo/local_manifests/ppx620.xml
     <?xml version="1.0" encoding="UTF-8"?>
     <manifest>
         <project name="pvliesdonk/device_philips_ppx620" path="device/philips/ppx620" remote="github" revision="master" />

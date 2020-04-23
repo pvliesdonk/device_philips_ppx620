@@ -29,7 +29,7 @@
 /metadata       ext4    /dev/block/by-name/metadata         flags=display="Metadata"
 
 /vendor         ext4    /dev/block/by-name/vendor           flags=backup=0;display="Vendor"
-/vendor         emmc    /dev/block/by-name/vendor           flags=backup=1;flashimg;display="Vendor Image"
+/vendor_image   emmc    /dev/block/by-name/vendor           flags=backup=1;flashimg;display="Vendor Image"
 
 /oem            ext4    /dev/block/by-name/oem              flags=backup=0;display="OEM"
 /oem_image      emmc    /dev/block/by-name/oem              flags=backup=1;flashimg;display="OEM Image "
