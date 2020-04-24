@@ -101,7 +101,7 @@ e.g.
     <?xml version="1.0" encoding="UTF-8"?>
     <manifest>
         <project name="pvliesdonk/device_philips_ppx620" path="device/philips/ppx620" remote="github" revision="master" />
-	<remove-project name="android_bootable_recovery"/>
+        <remove-project name="android_bootable_recovery"/>
         <project name="pvliesdonk/android_bootable_recovery" path="bootable/recovery"  remote="github" revision="android-9.0"/>
     </manifest>
     EOT
