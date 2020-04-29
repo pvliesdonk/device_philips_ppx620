@@ -1,8 +1,8 @@
 # mount point   fstype  device                                                   [flags]
 
 
-/external_sd   auto        /dev/block/mmcblk1p1                                     flags=wipeingui;storage;removable;display="External SD"
-/usb-otg       auto        /dev/block/sda1                                          flags=wipeingui;storage;removable;display="USB OTG"
+/external_sd   auto        /dev/block/mmcblk0p1                                     flags=wipeingui;storage;removable;display="External SD"
+#/usb-otg       auto        /dev/block/sda1                                          flags=wipeingui;storage;removable;display="USB OTG"
 
 
 /uboot          emmc    /dev/block/by-name/uboot            flags=backup=1;display="Uboot";flashimg

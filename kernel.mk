@@ -16,7 +16,7 @@
 
 # Kernel
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
-BOARD_KERNEL_CMDLINE := console=ttyFIQ0 loglevel=7 androidboot.selinux=permissive androidboot.hardware=rk30board firmware_class.path=/vendor/etc/firmware init=/init rootwait loop.max_part=7
+BOARD_KERNEL_CMDLINE := console=ttyFIQ0 loglevel=6 androidboot.selinux=permissive androidboot.hardware=rk30board firmware_class.path=/vendor/etc/firmware init=/init rootwait loop.max_part=7
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --second_offset 0x00f00000 --second  $(LOCAL_PATH)/second.img --header_version 1
