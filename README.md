@@ -1,6 +1,6 @@
 # TWRP Custom recovery for Philips PicoPix Max PPX620
 
-Disclaimers:
+## Disclaimers:
 - Using a custom recovery and/or modding your device may very likely mess up your device in irreversible ways.
 - You *will* lose the automatic update functionality.
 - It will also void your warrantee.
@@ -8,7 +8,7 @@ Disclaimers:
 - This is my own personal work and has no endorsement from either Philips or Screeneo.
 - *If these instructions are not sufficient for you, you should not be doing this.*
 
-Contents
+## Contents
 - [Putting the device in ADB or FastBoot mode](#putting-the-device-in-adb-or-fastboot-mode)
 	- [ADB Mode](#adb-mode)
 	- [Fastboot Mode](#fastboot-mode)
