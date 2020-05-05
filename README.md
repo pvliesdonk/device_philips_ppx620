@@ -2,6 +2,7 @@
 
 Disclaimers:
 - Using a custom recovery and/or modding your device may very likely mess up your device in irreversible ways.
+- You *will* lose the automatic update functionality.
 - It will also void your warrantee.
 - I will not responsible for any kind of damage or loss occurred to your device, during or after the installation process. Proceed at your own risk.
 - This is my own personal work and has no endorsement from either Philips or Screeneo.
