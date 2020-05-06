@@ -7,7 +7,7 @@
 
 /uboot          emmc    /dev/block/by-name/uboot            flags=backup=1;display="Uboot";flashimg
 /trust          emmc    /dev/block/by-name/trust            flags=backup=1;display="Trust";flashimg
-/misc           emmc    /dev/block/by-name/misc             flags=display="Misc"
+/misc           emmc    /dev/block/by-name/misc             flags=backup=1;display="Misc"
 /baseparameter  emmc    /dev/block/by-name/baseparameter    flags=display="Parameter"
 /resource       emmc    /dev/block/by-name/resource         flags=display="Resource";flashimg
 
