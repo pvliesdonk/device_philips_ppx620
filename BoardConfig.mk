@@ -94,10 +94,44 @@ TW_INCLUDE_RESETPROP_PREBUILT := true
 include $(LOCAL_PATH)/kernel.mk
 include $(LOCAL_PATH)/BoardConfig64.mk
 
-# TWRP_REQUIRED_MODULES += nano
-# RELINK_SOURCE_FILES += $(TARGET_OUT_OPTIONAL_EXECUTABLES)/nano
 
-RELINK_SOURCE_FILES += device/philips/ppx620/sqlite3
+RELINK_SOURCE_FILES += device/philips/ppx620/utils/bin/sqlite3
+RELINK_SOURCE_FILES += device/philips/ppx620/utils/bin/nano.bin
 
-
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/utils/etc/terminfo/v/vt220:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/v/vt220 \
+    $(LOCAL_PATH)/utils/etc/terminfo/v/vt102:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/v/vt102 \
+    $(LOCAL_PATH)/utils/etc/terminfo/v/vt100:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/v/vt100 \
+    $(LOCAL_PATH)/utils/etc/terminfo/v/vt52:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/v/vt52 \
+    $(LOCAL_PATH)/utils/etc/terminfo/a/ansi:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/a/ansi \
+    $(LOCAL_PATH)/utils/etc/terminfo/w/wsvt25:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/w/wsvt25 \
+    $(LOCAL_PATH)/utils/etc/terminfo/w/wsvt25m:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/w/wsvt25m \
+    $(LOCAL_PATH)/utils/etc/terminfo/s/screen-w:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/s/screen-w \
+    $(LOCAL_PATH)/utils/etc/terminfo/s/screen:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/s/screen \
+    $(LOCAL_PATH)/utils/etc/terminfo/s/sun:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/s/sun \
+    $(LOCAL_PATH)/utils/etc/terminfo/s/screen-bce:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/s/screen-bce \
+    $(LOCAL_PATH)/utils/etc/terminfo/s/screen-s:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/s/screen-s \
+    $(LOCAL_PATH)/utils/etc/terminfo/s/screen-256color:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/s/screen-256color \
+    $(LOCAL_PATH)/utils/etc/terminfo/s/screen-256color-bce:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/s/screen-256color-bce \
+    $(LOCAL_PATH)/utils/etc/terminfo/d/dumb:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/d/dumb \
+    $(LOCAL_PATH)/utils/etc/terminfo/m/mach-bold:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/m/mach-bold \
+    $(LOCAL_PATH)/utils/etc/terminfo/m/mach-color:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/m/mach-color \
+    $(LOCAL_PATH)/utils/etc/terminfo/m/mach:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/m/mach \
+    $(LOCAL_PATH)/utils/etc/terminfo/h/hurd:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/h/hurd \
+    $(LOCAL_PATH)/utils/etc/terminfo/p/pcansi:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/p/pcansi \
+    $(LOCAL_PATH)/utils/etc/terminfo/r/rxvt-basic:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/r/rxvt-basic \
+    $(LOCAL_PATH)/utils/etc/terminfo/r/rxvt:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/r/rxvt \
+    $(LOCAL_PATH)/utils/etc/terminfo/x/xterm-r5:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/x/xterm-r5 \
+    $(LOCAL_PATH)/utils/etc/terminfo/x/xterm:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/x/xterm \
+    $(LOCAL_PATH)/utils/etc/terminfo/x/xterm-xfree86:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/x/xterm-xfree86 \
+    $(LOCAL_PATH)/utils/etc/terminfo/x/xterm-vt220:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/x/xterm-vt220 \
+    $(LOCAL_PATH)/utils/etc/terminfo/x/xterm-color:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/x/xterm-color \
+    $(LOCAL_PATH)/utils/etc/terminfo/x/xterm-r6:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/x/xterm-r6 \
+    $(LOCAL_PATH)/utils/etc/terminfo/x/xterm-256color:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/x/xterm-256color \
+    $(LOCAL_PATH)/utils/etc/terminfo/c/cons25:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/c/cons25 \
+    $(LOCAL_PATH)/utils/etc/terminfo/c/cygwin:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/c/cygwin \
+    $(LOCAL_PATH)/utils/etc/terminfo/l/linux:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/l/linux \
+    $(LOCAL_PATH)/utils/etc/terminfo/E/Eterm-color:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/E/Eterm-color \
+    $(LOCAL_PATH)/utils/etc/terminfo/E/Eterm:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/E/Eterm \
+    $(LOCAL_PATH)/utils/bin/nano:$(TARGET_COPY_OUT_RECOVERY)/root/bin/nano
 
