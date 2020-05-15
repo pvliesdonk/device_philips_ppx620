@@ -91,6 +91,8 @@ TW_EXCLUDE_ENCRYPTED_BACKUPS := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP_PREBUILT := true
 
+TW_DEVICE_VERSION := v1.1
+
 include $(LOCAL_PATH)/kernel.mk
 include $(LOCAL_PATH)/BoardConfig64.mk
 
