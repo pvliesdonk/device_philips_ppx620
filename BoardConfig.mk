@@ -95,8 +95,8 @@ include $(LOCAL_PATH)/kernel.mk
 include $(LOCAL_PATH)/BoardConfig64.mk
 
 
-RELINK_SOURCE_FILES += device/philips/ppx620/utils/bin/sqlite3
-RELINK_SOURCE_FILES += device/philips/ppx620/utils/bin/nano.bin
+RELINK_SOURCE_FILES += device/philips/ppx620/utils/sbin/sqlite3
+RELINK_SOURCE_FILES += device/philips/ppx620/utils/sbin/nano.bin
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/utils/etc/terminfo/v/vt220:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/v/vt220 \
@@ -133,5 +133,5 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/utils/etc/terminfo/l/linux:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/l/linux \
     $(LOCAL_PATH)/utils/etc/terminfo/E/Eterm-color:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/E/Eterm-color \
     $(LOCAL_PATH)/utils/etc/terminfo/E/Eterm:$(TARGET_COPY_OUT_RECOVERY)/root/etc/terminfo/E/Eterm \
-    $(LOCAL_PATH)/utils/bin/nano:$(TARGET_COPY_OUT_RECOVERY)/root/bin/nano
+    $(LOCAL_PATH)/utils/sbin/nano:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/nano
 
