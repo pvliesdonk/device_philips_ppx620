@@ -104,7 +104,6 @@ e.g.
         <project name="pvliesdonk/device_philips_ppx620" path="device/philips/ppx620" remote="github" revision="master" />
         <remove-project name="android_bootable_recovery"/>
         <project name="pvliesdonk/android_bootable_recovery" path="bootable/recovery"  remote="github" revision="android-9.0"/>
-        <project path="external/sqlite" name="platform/external/sqlite" groups="pdk" />
     </manifest>
     EOT
 
