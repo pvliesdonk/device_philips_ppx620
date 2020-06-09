@@ -91,10 +91,34 @@ TW_EXCLUDE_ENCRYPTED_BACKUPS := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP_PREBUILT := true
 
-TW_DEVICE_VERSION := v1.1
+TW_DEVICE_VERSION := v1.2
 
-include $(LOCAL_PATH)/kernel.mk
-include $(LOCAL_PATH)/BoardConfig64.mk
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
+BOARD_KERNEL_CMDLINE := console=ttyFIQ0 loglevel=6 androidboot.selinux=permissive androidboot.hardware=rk30board firmware_class.path=/vendor/etc/firmware init=/init rootwait loop.max_part=7
+BOARD_KERNEL_BASE := 0x10000000
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --second_offset 0x00f00000 --second  $(LOCAL_PATH)/second --header_version 1
+
+TARGET_KERNEL_CONFIG := ppx620_defconfig
+
+
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 :=
+TARGET_CPU_VARIANT := generic
+
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := cortex-a9
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+ENABLE_CPUSETS := true
+ENABLE_SCHEDBOOST := true
+
+# TWRP
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 
 
 RELINK_SOURCE_FILES += device/philips/ppx620/utils/sbin/sqlite3
