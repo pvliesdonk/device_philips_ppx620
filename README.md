@@ -76,10 +76,10 @@ Following packages are needed in Ubuntu:
 
     sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip libtinfo5
     
-Ubuntu 20.04 install lib32nurses6, so we make a symlink:
+Ubuntu 20.04 install lib32nurses6 where we need version 5, so we make a symlink:
 
-    sudo ln -s libncursesw.so.6.2 libncursesw.so.5
-    sudo ln -s libncurses.so.6.2 libncurses.so.5
+    sudo ln -s /usr/lib/x86_64-linux-gnu/libncursesw.so.6.2 /usr/lib/x86_64-linux-gnu/libncursesw.so.5
+    sudo ln -s /usr/lib/x86_64-linux-gnu/libncurses.so.6.2 /usr/lib/x86_64-linux-gnu/libncurses.so.5
 
 Create a working directory
 
